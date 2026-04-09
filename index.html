@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Smart Interactive Learning System for Boolean Algebra and Embedded Systems — learn conversions, truth tables, logic gates, and embedded concepts interactively.">
+  <title>Smart Learning System — Boolean Algebra & Embedded Systems</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⚡</text></svg>">
+</head>
+<body>
+  <div class="app">
+    <!-- ===== Header ===== -->
+    <header class="header" id="app-header">
+      <div class="header-left">
+        <div class="logo-icon">⚡</div>
+        <div class="header-title">
+          <h1>Smart Learning System</h1>
+          <span>Boolean Algebra & Embedded Systems</span>
+        </div>
+      </div>
+      <div class="mode-toggle" id="mode-toggle">
+        <button class="mode-btn active" data-mode="step" id="btn-step-mode">Step Mode</button>
+        <button class="mode-btn" data-mode="answer" id="btn-answer-mode">Answer Mode</button>
+      </div>
+    </header>
+
+    <!-- ===== Main Split Screen ===== -->
+    <main class="main-content">
+      <div class="divider" aria-hidden="true"></div>
+
+      <!-- ---- Left: Chat Panel ---- -->
+      <section class="chat-panel" id="chat-panel">
+        <div class="chat-panel-header">
+          <div class="panel-dot"></div>
+          <h2>Input</h2>
+        </div>
+
+        <div class="chat-messages" id="chat-messages">
+          <div class="welcome-msg" id="welcome-chat">
+            <div class="welcome-icon">🧠</div>
+            <h3>Ask me anything</h3>
+            <p>Type a Boolean algebra question, a number conversion, or ask about embedded systems.</p>
+          </div>
+        </div>
+
+        <div class="suggestion-chips" id="suggestion-chips">
+          <button class="chip" data-query="Convert 255 to binary">255 → Binary</button>
+          <button class="chip" data-query="Truth table for A AND B">A AND B</button>
+          <button class="chip" data-query="Convert 1010 from binary to hex">1010 → Hex</button>
+          <button class="chip" data-query="What is an embedded system?">Embedded Systems</button>
+          <button class="chip" data-query="XOR gate">XOR Gate</button>
+          <button class="chip" data-query="Microcontroller vs Microprocessor">MCU vs MPU</button>
+          <button class="chip" data-query="Simplify A AND A OR A">Simplify Bool</button>
+          <button class="chip" data-query="What is a real-time system?">Real-Time OS</button>
+        </div>
+
+        <div class="input-bar" id="input-bar">
+          <input type="text" id="user-input" placeholder="e.g. Convert 42 to binary…" autocomplete="off" aria-label="Enter your question">
+          <button class="send-btn" id="send-btn" aria-label="Send">➤</button>
+        </div>
+      </section>
+
+      <!-- ---- Right: Result Panel ---- -->
+      <section class="result-panel" id="result-panel">
+        <div class="result-panel-header">
+          <h2>Explanation</h2>
+        </div>
+
+        <div class="result-content" id="result-content">
+          <div class="result-welcome" id="welcome-result">
+            <h3 style="font-size:1.1rem;color:var(--text-primary);">Interactive Explanations</h3>
+            <p style="font-size:0.85rem;color:var(--text-tertiary);max-width:360px;line-height:1.6;">Your results, truth tables, gate visuals, and step-by-step breakdowns will appear here.</p>
+            <div class="feature-grid">
+              <div class="feature-card">
+                <div class="feature-icon">🔢</div>
+                <h4>Conversions</h4>
+                <p>Binary, Decimal, Hex with steps</p>
+              </div>
+              <div class="feature-card">
+                <div class="feature-icon">📊</div>
+                <h4>Truth Tables</h4>
+                <p>Auto-generated for any expression</p>
+              </div>
+              <div class="feature-card">
+                <div class="feature-icon">⚙️</div>
+                <h4>Logic Gates</h4>
+                <p>Visual diagrams + explanations</p>
+              </div>
+              <div class="feature-card">
+                <div class="feature-icon">🔧</div>
+                <h4>Embedded Systems</h4>
+                <p>Theory, examples, comparisons</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
